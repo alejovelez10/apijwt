@@ -12,7 +12,7 @@ $(document).ready(function(){
     headers: {
         'Authorization': "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MzEwMDE2MjB9.JCLjDcy49YF1l1I1xetyYzeRSCNORGJ38OE8eovzfg4"
     },
-    url: "http://localhost:3000/contacts"
+    url: "https://hidden-fjord-30398.herokuapp.com/contacts"
     
 }).then(function (response) {
 
@@ -24,14 +24,14 @@ $(document).ready(function(){
 
 
     $(".post").click(function(){
-        $.post("http://localhost:3000/auth/login",
+        $.post("https://hidden-fjord-30398.herokuapp.com/auth/login",
         {
           email: "alejo@gmail.com",
           password: "alejo0906"
         },
         function(data,status){
             
-            document.cookie = "nombrecookie=valorcookie; max-age=3600; path=/";
+            document.cookie = "token=" + data.access_token;
             
         });
     });
