@@ -6,11 +6,12 @@
 $(document).ready(function(){
     $(".get").click(function(){
     
+    var token = getCookie("token")
   
 
     $.ajax({
     headers: {
-        'Authorization': "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MzEwMDE2MjB9.JCLjDcy49YF1l1I1xetyYzeRSCNORGJ38OE8eovzfg4"
+        'Authorization': token
     },
     url: "https://hidden-fjord-30398.herokuapp.com/contacts"
     
