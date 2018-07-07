@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".get").click(function(){
+    
+  
+
+    $.ajax({
+    headers: {
+        'Authorization': "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MzEwMDE2MjB9.JCLjDcy49YF1l1I1xetyYzeRSCNORGJ38OE8eovzfg4"
+    },
+    url: "http://localhost:3000/contacts"
+    
+}).then(function (response) {
+
+   console.log(response) 
+});
+ 
+
+  });
+
+
+    $(".post").click(function(){
+        $.post("http://localhost:3000/auth/login",
+        {
+          email: "alejo@gmail.com",
+          password: "alejo0906"
+        },
+        function(data,status){
+            
+            document.cookie = "nombrecookie=valorcookie; max-age=3600; path=/";
+            
+        });
+    });
+});
+</script>
+</head>
+<body>
+
+<button class="get">Get</button>
+
+<button class="post">Post</button>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
