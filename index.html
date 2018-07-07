@@ -35,12 +35,29 @@ $(document).ready(function(){
             
         });
     });
+
+
+  $(".get1").click(function(){
+        $.get("https://sleepy-garden-75687.herokuapp.com/users", function(data, status){
+                
+            data = data.data[0]
+
+            console.log(data.id)
+            console.log(data.attributes["full-name"])
+            console.log(data.attributes.full)
+        });
+    });
+
+
+
 });
 </script>
 </head>
 <body>
 
 <button class="get">Get</button>
+
+<button class="get1">Get</button>
 
 <button class="post">Post</button>
 
